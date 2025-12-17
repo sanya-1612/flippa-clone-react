@@ -1,118 +1,60 @@
+// src/components/BuySellCard.js
 import React from 'react';
 
-const cardStyle = {
-  backgroundColor: 'white', 
-  padding: '40px',
-  borderRadius: '18px',
-  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
-  width: '450px',
-  textAlign: 'left',
-  border: '1px solid #a9c6ff', 
-  position: 'relative',
-};
-
-const listStyle = {
-  listStyle: 'none',
-  padding: 0,
-  marginTop: '25px',
-  display: 'flex',
-  flexWrap: 'wrap',
-  gap: '15px 30px',
-};
-
-const listItemStyle = {
-  color: '#555',
-  fontSize: '14px',
-  fontWeight: 500,
-};
-
-const businessItemStyle = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '12px 0',
-    borderBottom: '1px solid #eee',
-};
-
-
-const logoBoxStyle = (bgColor) => ({
-    width: '35px',
-    height: '35px',
-    backgroundColor: bgColor,
-    borderRadius: '8px',
-    border: '1px solid #ddd',
-    
-});
-
-function BuySellCard() {
+export default function BuySellCard() {
   return (
-    <div style={cardStyle}>
-      <h2 style={{ fontSize: '24px', margin: '0 0 10px 0', fontWeight: 700, color: '#333' }}>Buy & Sell End-to-End</h2>
-      <p style={{ color: '#555', lineHeight: '1.6', fontSize: '15px' }}>
+    <div style={{ backgroundColor: '#e9eefdff', padding: '45px', borderRadius: '28px', boxShadow: '0 4px 25px rgba(0,0,0,0.06)', width: '520px' }}>
+      <h2 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '15px', textAlign: 'center', color: '#0f172a' }}>Buy & Sell End-to-End</h2>
+      <p style={{ color: '#64748b', textAlign: 'center', lineHeight: '1.6', fontSize: '16px', marginBottom: '25px' }}>
         List, connect, and sell your business with end-to-end advisory through Flippa's global marketplace.
       </p>
 
-      <ul style={listStyle}>
-        <li style={listItemStyle}><span style={{color: '#007bff', marginRight: '5px'}}>✓</span> 425,000 AI Buyer Matches Weekly</li>
-        <li style={listItemStyle}><span style={{color: '#007bff', marginRight: '5px'}}>✓</span> Expert Advisory & Brokerage</li>
-      </ul>
-
-      <div style={{ display: 'flex', gap: '15px', marginTop: '30px' }}>
-        <button className="white-button" style={{ padding: '10px 20px' }}>Browse Businesses</button>
-        <button className="blue-button" style={{ padding: '10px 20px' }}>Sell Now</button>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '25px', fontSize: '13px', color: '#10b981', fontWeight: '600', marginBottom: '35px' }}>
+        <span>✓ 425,000 AI Buyer Matches Weekly</span>
+        <span>✓ Expert Advisory & Brokerage</span>
       </div>
 
-      {/* Buisness list section */}
-      <div style={{ marginTop: '40px', padding: '15px', backgroundColor: '#fff', borderRadius: '10px' }}>
-        <p style={{ fontWeight: 600, margin: '0 0 15px 0', fontSize: '15px', color: '#777' }}>Q Businesses for sale</p>
-        
-        {/* item 1: Ecommerce | Beauty */}
-        <div style={businessItemStyle}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={logoBoxStyle('#f0f0ff')}></div> 
-            <div>
-              <p style={{ margin: '0', fontWeight: 'bold', fontSize: '15px', color: '#333' }}>Ecommerce | Beauty</p>
-              <p style={{ margin: '0', fontSize: '12px', color: '#888' }}>3x | 3.9k</p>
-            </div>
-          </div>
-          <div style={{ textAlign: 'right' }}>
-            <p style={{ margin: '0', fontWeight: 'bold', fontSize: '15px', color: '#333' }}>USD $1,500,000</p>
-            <p style={{ margin: '0', fontSize: '12px', color: '#007bff', cursor: 'pointer' }}>View Listing</p>
-          </div>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', marginBottom: '45px' }}>
+        <button className="white-button" style={{ minWidth: '160px' }}>Browse Businesses</button>
+        <button className="blue-button" style={{ minWidth: '160px' }}>Sell Now</button>
+      </div>
+
+      {/* Inner List Container */}
+      <div style={{ backgroundColor: '#ffffff', border: '1px solid #f1f5f9', borderRadius: '18px', padding: '24px', boxShadow: '0 2px 10px rgba(0,0,0,0.02)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#94a3b8', marginBottom: '20px' }}>
+          <span>🔍</span> <span style={{ fontSize: '15px', fontWeight: '500' }}>Businesses for sale</span>
         </div>
         
-        {/* item 2: SaaS | AI Business */}
-        <div style={businessItemStyle}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={logoBoxStyle('#e6fff0')}></div>
+        {/* Item 1 */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '15px 0', borderBottom: '1px solid #f1f5f9' }}>
+          <div style={{ display: 'flex', gap: '15px' }}>
+            <div style={{ width: '45px', height: '45px', backgroundColor: '#f0f9ff', borderRadius: '10px' }}></div>
             <div>
-              <p style={{ margin: '0', fontWeight: 'bold', fontSize: '15px', color: '#333' }}>SaaS | AI Business</p>
-              <p style={{ margin: '0', fontSize: '12px', color: '#888' }}>4x | 3.2x</p>
+              <div style={{ fontWeight: '700', fontSize: '15px', color: '#1e293b' }}>Ecommerce | Beauty</div>
+              <div style={{ color: '#94a3b8', fontSize: '13px' }}>3x | 3.9x</div>
             </div>
           </div>
           <div style={{ textAlign: 'right' }}>
-            <p style={{ margin: '0', fontWeight: 'bold', fontSize: '15px', color: '#333' }}>£965,000</p>
-            <p style={{ margin: '0', fontSize: '12px', color: '#007bff', cursor: 'pointer' }}>View Listing</p>
+            <div style={{ fontWeight: '700', fontSize: '15px' }}>USD $1,500,000</div>
+            <div style={{ color: '#0066ff', fontSize: '12px', fontWeight: '600', cursor: 'pointer' }}>View Listing</div>
           </div>
         </div>
 
-        {/* item 3: YouTube | Sports */}
-        <div style={{...businessItemStyle, borderBottom: 'none'}}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={logoBoxStyle('#ffeded')}></div> 
+        {/* Item 2 */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '15px 0' }}>
+          <div style={{ display: 'flex', gap: '15px' }}>
+            <div style={{ width: '45px', height: '45px', backgroundColor: '#fdf2f2', borderRadius: '10px' }}></div>
             <div>
-              <p style={{ margin: '0', fontWeight: 'bold', fontSize: '15px', color: '#333' }}>YouTube | Sports</p>
-              <p style={{ margin: '0', fontSize: '12px', color: '#888' }}>4x | 1.2k</p>
+              <div style={{ fontWeight: '700', fontSize: '15px', color: '#1e293b' }}>YouTube | Sports</div>
+              <div style={{ color: '#94a3b8', fontSize: '13px' }}>4x | 1.2k</div>
             </div>
           </div>
           <div style={{ textAlign: 'right' }}>
-            <p style={{ margin: '0', fontWeight: 'bold', fontSize: '15px', color: '#333' }}>AUD $480,000</p>
-            <p style={{ margin: '0', fontSize: '12px', color: '#007bff', cursor: 'pointer' }}>View Listing</p>
+            <div style={{ fontWeight: '700', fontSize: '15px' }}>AUD $480,000</div>
+            <div style={{ color: '#0066ff', fontSize: '12px', fontWeight: '600', cursor: 'pointer' }}>View Listing</div>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-export default BuySellCard;
